@@ -14,6 +14,7 @@
     - cd /etc/docker3
   - #### Запуск:
     - docker-compose up -d
+    - docker ps
   - #### Диагностика подключения к MySql:
     - apt-get install mysql-client
     - telnet 127.0.0.1 3306
