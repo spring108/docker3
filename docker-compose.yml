@@ -4,13 +4,14 @@ services:
   
   prod_db:
     image: mysql:latest     # https://hub.docker.com/_/mysql
-    #EXPOSE 3306 33060
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'secret_pwd'
       MYSQL_DATABASE: 'my_db'
-    volumes:
-      - '/var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock'
+    ports:
+      - '3306:3306'
+    #volumes:
+    #  - '/var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock'
     #  - './mysql:/var/lib/mysql'
   
   assembly:
