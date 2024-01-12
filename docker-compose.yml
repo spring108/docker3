@@ -11,16 +11,13 @@ services:
       MYSQL_DATABASE: my_db
     ports:
       - '3306:3306'
-    #volumes:
-    #  - '/var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock'
-    #  - './mysql:/var/lib/mysql'
   
   assembly:
     build:
       context: ./assembly
       dockerfile: assembly.Dockerfile
     volumes:
-      - '/etc/docker3/artifact/:/tmp/App42PaaS-Java-MySQL-Sample/target/'
+      - 'artifact:/tmp/App42PaaS-Java-MySQL-Sample/target/'
     depends_on:
       - prod_db
   
@@ -31,9 +28,9 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - '/etc/docker3/artifact/:/usr/local/tomcat/webapps/'
+      - 'artifact:/usr/local/tomcat/webapps/'
     depends_on:
       - prod_db
   
-#volumes:
-#  folder_common:
+volumes:
+  artifact:
