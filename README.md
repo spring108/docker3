@@ -16,6 +16,7 @@
     - docker-compose up -d
   - #### Диагностика подключения к MySql:
     - apt-get install mysql-client
+    - telnet 127.0.0.1 3306
     - mysql --host 51.250.76.243 --user root -D my_db
 
 

@@ -1,9 +1,10 @@
 ---
-version: '3'
+version: '3.8'
 services:
   
   prod_db:
     image: mysql:latest     # https://hub.docker.com/_/mysql
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'secret_pwd'
