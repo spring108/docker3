@@ -9,7 +9,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'secret_pwd'
       MYSQL_DATABASE: 'my_db'
-    #volumes:
+    volumes:
+      - '/var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock'
     #  - './mysql:/var/lib/mysql'
   
   assembly:
