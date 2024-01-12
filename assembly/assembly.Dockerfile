@@ -12,9 +12,9 @@ RUN cd /tmp && \
     git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
 
 
-#RUN rm /tmp/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
-#ADD Config.properties /tmp/App42PaaS-Java-MySQL-Sample/WebContent/
-
+ADD Config.properties /tmp/
+RUN rm /tmp/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties && \
+    cp /tmp/Config.properties /tmp/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
 
 RUN cd /tmp/App42PaaS-Java-MySQL-Sample && \
     mvn package
