@@ -1,0 +1,40 @@
+---
+version: '3.8'
+services:
+  
+  prod_db:
+    image: mysql:latest     # https://hub.docker.com/_/mysql
+    #EXPOSE 3306 33060
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secret_pwd'
+      MYSQL_DATABASE: 'my_db'
+    #volumes:
+    #  - './mysql:/var/lib/mysql'
+  
+  assembly:
+    build:
+      context: ./assembly
+      dockerfile: assembly.Dockerfile
+    volumes:
+      - type: volume
+        source: folder_common
+        target: /tmp/App42PaaS-Java-MySQL-Sample/target/
+    depends_on:
+      - prod_db
+  
+  prod_web:
+    image: 'tomcat:jre8-alpine' #ENV CATALINA_HOME=/usr/local/tomcat
+    hostname: 'tomcat'
+    restart: always
+    ports:
+      - '8080:8080'
+    volumes:
+      - type: volume
+        source: folder_common
+        target: /usr/local/tomcat/webapps/
+    depends_on:
+      - prod_db
+  
+volumes:
+  folder_common:

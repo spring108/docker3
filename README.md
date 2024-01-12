@@ -1,10 +1,10 @@
 ## DevOps \ Домашнее задание №12 - docker-compose
 
-Задача: Практика контейнеризации Java приложения https://github.com/shephertz/App42PaaS-Java-MySQL-Sample
+Практика контейнеризации Java приложения https://github.com/shephertz/App42PaaS-Java-MySQL-Sample
 
 
 
-## Сервер build создаёт три контейнера: для сборки и запуска приложения:
+## Сервер prod создаёт три контейнера: для сборки и запуска приложения
   - #### Подготовка инфраструктуры:
     - sudo apt install git -y
     - sudo apt install docker.io -y
@@ -15,4 +15,4 @@
     - docker-compose up -d
 
 
-## Смотрим http://prod_ip:8080/hello
+## Смотрим http://prod_ip:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/
