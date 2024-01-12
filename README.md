@@ -8,6 +8,7 @@
   - #### Подготовка инфраструктуры:
     - sudo apt install git -y
     - sudo apt install docker.io -y
+    - sudo apt install docker-compose -y
     - cd /etc
     - git clone https://github.com/spring108/docker3.git
     - cd /etc/docker3
