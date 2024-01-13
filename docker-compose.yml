@@ -14,7 +14,6 @@ services:
   
   assembly:
     build:
-      context: ./assembly
       dockerfile: assembly.Dockerfile
     volumes:
       - 'artifact:/tmp/App42PaaS-Java-MySQL-Sample/target/'
@@ -29,6 +28,7 @@ services:
       - '8080:8080'
     volumes:
       - 'artifact:/usr/local/tomcat/webapps/'
+      - '/etc/docker3/Config.properties:/usr/local/tomcat/ROOT/Config.properties'
     depends_on:
       - prod_db
   
