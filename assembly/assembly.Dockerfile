@@ -11,8 +11,7 @@ RUN apt install maven -y
 RUN cd /tmp && \
     git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
 
-
-ADD Config.properties /tmp/
+ADD ./assembly/Config.properties /tmp/
 RUN rm /tmp/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties && \
     cp /tmp/Config.properties /tmp/App42PaaS-Java-MySQL-Sample/WebContent/Config.properties
 
