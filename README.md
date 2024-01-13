@@ -19,6 +19,8 @@
     - apt-get install mysql-client
     - mysql --host 127.0.0.1 --user root -D my_db --password
       - SHOW DATABASES; # видим БД my_db
+      - use my_db; show tables;
+
 
 
 ## Смотрим http://prod_ip:8080/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/

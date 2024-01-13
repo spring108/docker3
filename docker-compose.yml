@@ -20,8 +20,8 @@ services:
       context: ./
     volumes:
       - 'artifact:/tmp/App42PaaS-Java-MySQL-Sample/target/'
-    #depends_on:
-    #  - prod_db
+    depends_on:
+      - prod_db
   
   prod_web:
     #image: 'tomcat:jre8-alpine' #ENV CATALINA_HOME=/usr/local/tomcat
