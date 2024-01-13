@@ -30,6 +30,7 @@ services:
       - '8080:8080'
     volumes:
       - 'artifact:/usr/local/tomcat/webapps/'
+      - '/etc/docker3/Config.properties:/etc/Config.properties'
     depends_on:
       - prod_db
     networks:
