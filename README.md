@@ -10,13 +10,13 @@
     - sudo apt install docker.io -y
     - sudo apt install docker-compose -y
     - cd /etc
-    - git clone https://github.com/spring108/docker3.git
+    - sudo git clone https://github.com/spring108/docker3.git
     - cd /etc/docker3
   - #### Запуск:
     - docker-compose up -d
     - docker ps
   - #### Диагностика подключения к MySQL:
-    - apt-get install mysql-client
+    - apt-get install mysql-client -y
     - mysql --host 127.0.0.1 --user root -D my_db --password
       - SHOW DATABASES; # видим БД my_db
       - use my_db; show tables;
