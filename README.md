@@ -15,6 +15,7 @@
     - cd /etc
     - sudo git clone https://github.com/spring108/docker3.git
     - cd /etc/docker3
+    - sudo mc
   - #### Запуск:
     - docker-compose up -d
     - docker ps
