@@ -6,6 +6,9 @@
 
 ## Сервер prod создаёт три контейнера: для сборки и запуска приложения
   - #### Подготовка инфраструктуры:
+    - sudo apt update
+    - sudo apt-get update
+    - sudo apt-get install mc -y
     - sudo apt install git -y
     - sudo apt install docker.io -y
     - sudo apt install docker-compose -y
