@@ -6,7 +6,7 @@ services:
     #https://hub.docker.com/_/mysql
     #image: mysql:8.0
     #image: mysql:latest
-    image: mysql:5.0
+    image: mysql:5.7.17
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
